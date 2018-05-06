@@ -3,3 +3,5 @@ Getting Started
 1. Installing Node.js
 2. About node versions (LTS and current versions)
 3. The Node process
+4. Learned what is blocking and non-blocking I/O model
+5. Creating my first node executable file - app.js
