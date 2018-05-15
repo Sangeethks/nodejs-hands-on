@@ -7,3 +7,5 @@ Node fundamentals
 5. fs.appendFile
 6. os module
 7. os.userInfo
+8. Requiring from a file
+9. module.exports
