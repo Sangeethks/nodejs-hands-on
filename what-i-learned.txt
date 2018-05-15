@@ -9,3 +9,4 @@ Node fundamentals
 7. os.userInfo
 8. Requiring from a file
 9. module.exports
+10. Installing nodemon 
