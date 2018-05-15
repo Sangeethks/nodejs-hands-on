@@ -1,3 +1,7 @@
 Node fundamentals
 ---------------------------------------------------------------------------
-1. 
+1. Using require
+2. Creating notes app
+3. File system module (fs)
+4. fs methods
+5. fs.appendFile
