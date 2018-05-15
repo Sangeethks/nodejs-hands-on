@@ -2,7 +2,7 @@ const fs = require('fs');
 const os = require('os');
 
 const user = os.userInfo();
-console.log('[user ]', user);
+// console.log('[user ]', user);
 
 const dataToAppend = `Hello ${user.username}`;
 fs.appendFile('greetings.txt', dataToAppend, err => {

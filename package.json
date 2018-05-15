@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon node-notes/app.js"
   },
   "repository": {
     "type": "git",
@@ -16,8 +17,5 @@
   "bugs": {
     "url": "https://github.com/Sangeethks/nodejs-hands-on/issues"
   },
-  "homepage": "https://github.com/Sangeethks/nodejs-hands-on#readme",
-  "devDependencies": {
-    "nodemon": "^1.17.4"
-  }
+  "homepage": "https://github.com/Sangeethks/nodejs-hands-on#readme"
 }
