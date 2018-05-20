@@ -13,9 +13,8 @@ const notes = {
 
     // Assign default value to body
     body = body || '';
-    // Check if file exists or not
-    let fileExist = fs.existsSync(filePath);
 
+    let notes = [];
     let _info = {
       created: new Date(),
       updated: new Date(),
@@ -23,50 +22,34 @@ const notes = {
     };
     let note = { title, body, _info };
 
-    if (fileExist) {
-      fs.readFile(filePath, (err, data) => {
-        if (err) return console.log(`[Unable to read note from ${filePath}]`);
+    try {
+      notesString = fs.readFileSync(filePath);
+      notes = JSON.parse(notesString);
 
-        // Get the notes
-        notesArr = JSON.parse(data);
+      let duplicateNotes = notes.filter(note => note.title === title);
 
-        console.log(`[notesArr]`, notesArr);
+      if (duplicateNotes && duplicateNotes.length) return;
+    } catch (e) {
 
-        // After getting current notes, append to the notes list
-        let newNoteArr = notesArr.push(note);
-
-        console.log(`[newNoteArr]`, newNoteArr);
-
-        // fs.appendFile(filePath, JSON.stringify(newNoteArr), (err) => {
-        //   if (err) return console.log(`[Error adding note "${title}"]`);
-        //
-        //   console.log(`[Note "${title}" added]`);
-        // });
-      });
-    } else {
-      let notes = JSON.stringify([note]);
-
-      console.log('[notes]', notes);
-
-      fs.appendFile(filePath, notes, (err) => {
-        if (err) return console.log(`[Error adding note "${title}"]`);
-
-        console.log(`[Note "${title}" added]`);
-      });
     }
+
+    notes.push(note);
+    fs.writeFileSync(filePath, JSON.stringify(notes));
   },
   // Lists all notes in the notes.json file
   listNotes: () => {
-    let fileExist = fs.existsSync(filePath);
-    if (!fileExist) return console.log('[File does not exists]');
+    console.log('[listNotes]');
+  },
+  readNote: (title) => {
+    console.log('[readNote]');
+    console.log('[readNote title]', tille);
 
-    let notes = fs.readFile(filePath, (err, data) => {
-      if (err) return console.log('[Unable to list notes]');
+  },
+  deleteNote: (title) => {
+    console.log('[deleteNote]');
+    console.log('[deleteNote title]', tille);
 
-      let notes = JSON.parse(data);
-      console.log('[listNotes notes]', notes);
-    });
-  }
+  },
 }
 
 module.exports = notes;

@@ -13,15 +13,24 @@ console.log('[Commands]', command);
 // Execute methods according to different commands
 switch (command) {
   case 'add':
-    // Get the arguments
-    let title = argv.title;
-    let body = argv.body;
+  // Get the arguments
+  let title = argv.title;
+  let body = argv.body;
+  notes.addNote(title, body);
+  break;
 
-    notes.addNote(title, body);
-    break;
   case 'list':
-    notes.listNotes();
-    break;
+  notes.listNotes();
+  break;
+
+  case 'read':
+  notes.readNote(title);
+  break;
+
+  case 'delete':
+  notes.deleteNote(title);
+  break;
+
   default:
-    console.log('[Err: Command not recognized]');
+  console.log('[Err: Command not recognized]');
 }
