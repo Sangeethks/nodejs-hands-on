@@ -16,9 +16,12 @@ switch (command) {
     // Get the arguments
     let title = argv.title;
     let body = argv.body;
-    
+
     notes.addNote(title, body);
     break;
+  case 'list':
+    notes.listNotes();
+    break;
   default:
-
+    console.log('[Err: Command not recognized]');
 }
