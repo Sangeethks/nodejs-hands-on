@@ -1,12 +1,8 @@
-const fs = require('fs');
-const os = require('os');
+const yargs = require('yargs');
 
-const user = os.userInfo();
-// console.log('[user ]', user);
+// Get the argument from the terminal
+let argv = yargs.argv;
+// Now get the command
+let command = argv._[0];
 
-const dataToAppend = `Hello ${user.username}`;
-fs.appendFile('greetings.txt', dataToAppend, err => {
-  if (err) return console.log(`Error appending '${dataToAppend}' to the file`);
-
-  console.log(`String ${dataToAppend} has been appended to the file`);
-});
+console.log('[Commands]', command);
