@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/Sangeethks/nodejs-hands-on/issues"
   },
-  "homepage": "https://github.com/Sangeethks/nodejs-hands-on#readme"
+  "homepage": "https://github.com/Sangeethks/nodejs-hands-on#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "yargs": "^11.0.0"
+  }
 }
